@@ -1,0 +1,48 @@
+---
+title: Getting started
+description: Install Honya, add a repository, choose your sources and start a library.
+---
+
+import { Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components"
+
+Honya is a manga reader for iPhone and iPad, on iOS and iPadOS 18 or later. It's free, with no account to make.
+
+Honya comes with no manga and no sources. What you read comes from **sources**, small scripts that each read one website, which other people write and publish in **repositories**. So the first thing to do is add a repository you trust.
+
+## Set up
+
+<Steps>
+
+1. **Add a repository.** Go to **Settings → Sources** and tap **Add Repository**. The first time, Honya explains what third-party content means: repositories are made by people who aren't affiliated with Honya, and the sites their sources read from may include mature content. Tap **Agree and Continue** if you're happy to go on.
+
+   Then enter the repository's address. That can be the address of its folder, its `index.json`, or a link to a GitHub repository. See [Adding a repository](/sources/repositories/) for the forms an address can take.
+
+2. **Get some sources.** The repository's sources are listed with the ones in your languages first. Tap **Get** next to each one you want. Sources marked **18+** can show adult content.
+
+3. **Find something to read.** Open the **Discover** tab and choose a source to browse it, or tap **Search** to look through your library and every source at once.
+
+4. **Add it to your library.** On a title's page, tap **Add to Library**. If you have categories, Honya asks which ones it goes in, or uses your default category.
+
+5. **Read.** Tap a chapter, or the **Continue** button, and Honya opens where you left off.
+
+</Steps>
+
+<Aside type="tip" title="Coming from Mihon, Tachiyomi or Paperback?">
+Make a backup there and open it in Honya. Your library, reading progress, categories and history come across, and the sources it used are found again where your repositories offer them. See [Backup and restore](/guide/backup-and-restore/).
+</Aside>
+
+## Find your way around
+
+Honya has four tabs:
+
+- **Library**: the titles you follow, in your categories. The bell opens **Updates**, where new chapters show up.
+- **Discover**: a daily queue of titles picked for you, the manga behind this season's anime, and your sources to browse.
+- **Settings**: sources, downloads, the reader's defaults, iCloud Sync, backups and the rest.
+- **Search**: your library and every source, from one field.
+
+<CardGrid>
+  <LinkCard title="Your library" href="/guide/library/" description="Categories, sorting, filters and the Continue button." />
+  <LinkCard title="The reader" href="/guide/reader/" description="Reading modes, page layouts and bookmarks." />
+  <LinkCard title="Library updates" href="/guide/updates/" description="How Honya checks for new chapters." />
+  <LinkCard title="How sources work" href="/sources/how-sources-work/" description="What a source can and can't do." />
+</CardGrid>

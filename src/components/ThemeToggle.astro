@@ -1,0 +1,57 @@
+---
+// Replaces Starlight's theme menu: one button showing the current theme, which switches to the
+// other on click. Until someone clicks, the docs follow the system's light or dark setting.
+import { Icon } from "@astrojs/starlight/components"
+---
+
+<honya-theme-toggle>
+  <button type="button" aria-label="Switch to light theme">
+    <Icon name="moon" class="moon" />
+    <Icon name="sun" class="sun" />
+  </button>
+</honya-theme-toggle>
+
+<style>
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0.5rem;
+    background: none;
+    color: var(--sl-color-gray-2);
+    cursor: pointer;
+  }
+  button:hover { color: var(--sl-color-white); }
+  button:focus-visible { outline: 2px solid var(--sl-color-text-accent); outline-offset: 2px; }
+  button :global(svg) { width: 1.25rem; height: 1.25rem; }
+  :global([data-theme="light"]) .moon,
+  :global([data-theme="dark"]) .sun { display: none; }
+</style>
+
+<script>
+  // The same key Starlight's own theme menu and the home page use.
+  const storageKey = "starlight-theme"
+
+  class HonyaThemeToggle extends HTMLElement {
+    constructor() {
+      super()
+      const button = this.querySelector("button")!
+      const label = () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+        button.setAttribute("aria-label", `Switch to ${next} theme`)
+      }
+      label()
+      button.addEventListener("click", () => {
+        const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+        document.documentElement.dataset.theme = theme
+        try { localStorage.setItem(storageKey, theme) } catch {}
+        label()
+      })
+    }
+  }
+  customElements.define("honya-theme-toggle", HonyaThemeToggle)
+</script>

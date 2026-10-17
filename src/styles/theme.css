@@ -1,0 +1,47 @@
+/* The app icon's indigo and cream, as Starlight's colours: indigo ink on cream paper in light
+   mode, cream on a night indigo in dark. Starlight names its scale for dark mode, so in light
+   mode "white" is the darkest ink and "black" the paper. */
+:root {
+  --sl-color-accent-low: #222d57;
+  --sl-color-accent: #6f86d9;
+  --sl-color-accent-high: #c9d3f5;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eeeae2;
+  --sl-color-gray-2: #c8cbd8;
+  --sl-color-gray-3: #9096b0;
+  --sl-color-gray-4: #5d6485;
+  --sl-color-gray-5: #353d60;
+  --sl-color-gray-6: #1d2544;
+  --sl-color-black: #141b33;
+
+  --honya-heading-font: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #dde2f2;
+  --sl-color-accent: #24346a;
+  --sl-color-accent-high: #1b2550;
+  --sl-color-white: #141b33;
+  --sl-color-gray-1: #1d2544;
+  --sl-color-gray-2: #353a52;
+  --sl-color-gray-3: #5a5c6b;
+  --sl-color-gray-4: #8a8a92;
+  --sl-color-gray-5: #cdc6b9;
+  --sl-color-gray-6: #e8e1d4;
+  --sl-color-gray-7: #efe9de;
+  --sl-color-black: #f7f3eb;
+}
+
+/* Page titles, section headings and the site's name in the Mincho of the app's About screen. */
+.site-title,
+.content-panel h1,
+.sl-markdown-content h2 {
+  font-family: var(--honya-heading-font);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.site-title img {
+  border-radius: 22%;
+}
+

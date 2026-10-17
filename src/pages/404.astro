@@ -1,0 +1,324 @@
+---
+// The site's 404 page, which is also the page for shared manga links (/m/<source ID>?w=…&u=…&t=…)
+// where Honya isn't installed: GitHub Pages can't send every /m/ path to one page, but it serves
+// this for any path it has no file for, so the page reads the link from the address itself.
+// For a shared link it offers the App Store, or the manga's page on its source's site; for any
+// other address it says there's nothing there. Nothing happens on its own, so a crafted `w`
+// can't bounce visitors anywhere. Where Honya is installed, the app opens /m/ links itself
+// (public/.well-known/apple-app-site-association). Its images are under /assets/.
+// Shippori Mincho, served from here rather than Google Fonts.
+import "@fontsource/shippori-mincho/800.css"
+import { appStoreID, appStoreURL } from "../config"
+
+const site = Astro.site ?? new URL(Astro.url.origin)
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Honya</title>
+<meta name="description" content="A link shared with the Honya reader app, which opens the title on the site that hosts it.">
+<!-- One page per shared link, with whatever title it was shared with, or a missing page: not
+     for search engines. -->
+<meta name="robots" content="noindex, nofollow">
+<!-- Link previews (Messages and the like) read these without running the script, so they
+     stay generic. og:image is absolute: some previewers ignore a relative one. -->
+<meta property="og:site_name" content="Honya">
+<meta property="og:title" content="Shared with Honya">
+<meta property="og:image" content={new URL("/assets/icon-512.png", site).href}>
+<meta name="twitter:card" content="summary">
+<!-- Once Honya is on the App Store (appStoreID in src/config.ts): Safari's banner, which offers
+     Open where it's installed and Get where it isn't. -->
+{appStoreID && <meta name="apple-itunes-app" content={`app-id=${appStoreID}`}>}
+<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141B33" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style is:inline>
+  /* The app icon's indigo and cream: cream paper with indigo ink, or the other way round. */
+  :root {
+    --indigo: #24346A;
+    --cream: #F4EFE6;
+    --bg: var(--cream);
+    --ink: #1B2550;
+    --muted: #6B6A72;
+    --rule: rgba(36, 52, 106, 0.14);
+    --outline: rgba(36, 52, 106, 0.28);
+    --button-bg: var(--indigo);
+    --button-ink: var(--cream);
+    --glyph: rgba(36, 52, 106, 0.06);
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141B33;
+      --ink: var(--cream);
+      --muted: #A9AEC4;
+      --rule: rgba(244, 239, 230, 0.14);
+      --outline: rgba(244, 239, 230, 0.3);
+      --button-bg: var(--cream);
+      --button-ink: var(--indigo);
+      --glyph: rgba(244, 239, 230, 0.05);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+    overflow-x: hidden;
+    position: relative;
+  }
+  /* The icon's 書, huge and faint behind everything. */
+  body::before {
+    content: "";
+    position: fixed;
+    right: -12vmin;
+    bottom: -10vmin;
+    width: min(85vmin, 560px);
+    aspect-ratio: 384 / 403;
+    background: var(--glyph);
+    -webkit-mask: url("/assets/glyph.png") center / contain no-repeat;
+    mask: url("/assets/glyph.png") center / contain no-repeat;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 0 32px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .brand img {
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+    box-shadow: 0 1px 2px rgba(20, 27, 51, 0.12), 0 8px 24px rgba(20, 27, 51, 0.16);
+  }
+  .brand-name {
+    font: 800 24px/1 "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    letter-spacing: 0.01em;
+  }
+  .brand-name small {
+    display: block;
+    margin-top: 6px;
+    font: 500 13px/1 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 0;
+    font: 800 clamp(28px, 8vw, 38px)/1.15 "Shippori Mincho", "Hiragino Mincho ProN", serif;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  .source {
+    margin: 14px 0 0;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  .message { margin: 14px 0 0; color: var(--muted); }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  /* Apple devices get the App Store first; elsewhere, where Honya won't run, the site. */
+  .elsewhere #continue { order: -1; }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 52px;
+    padding: 0 20px;
+    border-radius: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .button svg { flex: none; width: 20px; height: 20px; }
+  .button:active { transform: scale(0.98); opacity: 0.85; }
+  .button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .secondary { color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--outline); }
+  .primary { background: var(--button-bg); color: var(--button-ink); }
+  .elsewhere #continue { background: var(--button-bg); color: var(--button-ink); box-shadow: none; }
+  /* Apple's badge at its own proportions, with room around it. */
+  .badge {
+    align-self: center;
+    display: block;
+    margin: 4px 0;
+    border-radius: 10px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .badge img { display: block; height: 54px; width: auto; }
+  .badge:active { transform: scale(0.98); opacity: 0.85; }
+  .badge:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .note {
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: center;
+    color: var(--muted);
+    text-wrap: balance;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 0 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    text-wrap: balance;
+  }
+  footer p { margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .button, .badge { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="brand" href="/">
+    <img src="/assets/apple-touch-icon.png" alt="" width="56" height="56">
+    <div class="brand-name">Honya<small>本屋 · Manga reader</small></div>
+  </a>
+
+  <div id="not-found" hidden>
+    <p class="eyebrow">Page not found</p>
+    <h1>There's nothing here.</h1>
+    <p class="message">The page may have moved, or the address may be mistyped.</p>
+    <div class="actions elsewhere">
+      <a class="button primary" href="/">Go to the home page</a>
+      <a class="button secondary" href="/guide/getting-started/">Read the guide</a>
+    </div>
+  </div>
+
+  <div id="shared">
+  <p class="eyebrow">Shared with you</p>
+  <h1 id="title">Shared link</h1>
+  <p class="source" id="source" hidden></p>
+  <p class="message" id="missing" hidden>This link is incomplete, so there's no title to open. Ask for it to be shared again.</p>
+  <noscript><p class="message">Turn on JavaScript to see where this link goes, or open it on an iPhone or iPad with Honya installed.</p></noscript>
+
+  <div class="actions" id="actions">
+    <!-- Apple's official badge as Apple Marketing Tools serve it (black on light, white on
+         dark, unaltered; see developer.apple.com/app-store/marketing/guidelines). Left out
+         until Honya is on the App Store. -->
+    {appStoreURL && (
+      <a class="badge" id="app-store" href={appStoreURL}>
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/white/en-us?size=250x83">
+          <img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" width="163" height="54">
+        </picture>
+      </a>
+    )}
+    <a class="button secondary" id="continue" href="#" rel="noopener noreferrer" hidden>
+      <span id="continue-label">Continue to the site</span>
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 4h8v8M16 4 5 15"/>
+      </svg>
+    </a>
+    <p class="note" id="note">After installing, tap the link you were sent again to open it in Honya.</p>
+  </div>
+  </div>
+</main>
+<footer>
+  <p>Honya is a reader. It doesn't host or publish manga: each title belongs to its creators and is on the site it links to.</p>
+</footer>
+<script is:inline>
+  // Any address without a file of its own lands here; only /m/… is a shared link.
+  if (!location.pathname.startsWith("/m/")) {
+    document.getElementById("shared").hidden = true;
+    document.getElementById("not-found").hidden = false;
+    document.title = "Page not found · Honya";
+  } else {
+    const params = new URLSearchParams(location.search);
+
+    // Anyone can write a link, so the title is kept to a title's length.
+    const title = (params.get("t") || "").trim().slice(0, 160);
+    if (title) {
+      document.getElementById("title").textContent = title;
+      document.title = `${title} · Honya`;
+    }
+
+    // Only ever a web page, never a `javascript:` URL or the like from a crafted link.
+    let target = null;
+    try {
+      // Links leave out `https://`.
+      const w = params.get("w") || "";
+      const url = new URL(w.includes("://") ? w : `https://${w}`);
+      if (url.protocol === "https:" || url.protocol === "http:") target = url;
+    } catch {}
+
+    if (target) {
+      const host = target.hostname.replace(/^www\./, "");
+      const source = document.getElementById("source");
+      source.textContent = `On ${host}`;
+      source.hidden = false;
+      const link = document.getElementById("continue");
+      link.href = target.href;
+      link.hidden = false;
+      document.getElementById("continue-label").textContent = `Continue to ${host}`;
+    } else {
+      document.getElementById("missing").hidden = false;
+    }
+
+    // Honya runs on iPhone and iPad (iPadOS asks for desktop pages, so it reads as a Mac with
+    // a touch screen). Anywhere else, and until Honya is on the App Store, the site comes first.
+    const ua = navigator.userAgent;
+    const isAppleTouch = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    const onAppStore = document.getElementById("app-store") != null;
+    if (!isAppleTouch || !onAppStore) {
+      document.getElementById("actions").classList.add("elsewhere");
+      document.getElementById("note").textContent = !isAppleTouch
+        ? "Honya is for iPhone and iPad."
+        : "Honya, the app this was shared from, is coming soon to the App Store.";
+    }
+  }
+</script>
+</body>
+</html>

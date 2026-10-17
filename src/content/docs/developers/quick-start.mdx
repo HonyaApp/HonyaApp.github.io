@@ -1,0 +1,160 @@
+---
+title: Quick start
+description: Set up the SDK, build a source, and install it in Honya from your Mac.
+---
+
+import { Aside, Code, FileTree, Steps } from "@astrojs/starlight/components"
+import { sdkRepositoryURL } from "../../../config"
+
+A source is a TypeScript module that default-exports an object with a few async functions: popular titles, search, a title's details, its chapters, and a chapter's pages. The build bundles each source into one JavaScript file and writes a repository's `index.json` listing them. Honya runs those files in JavaScriptCore.
+
+If you've written or read a [Mihon](https://mihon.app) extension, the functions will look familiar: they mirror Mihon's `HttpSource`, and the HTML parser speaks Jsoup's API, so selectors carry over unchanged.
+
+## What you need
+
+- [Node.js](https://nodejs.org) 22 or later
+- The <a href={sdkRepositoryURL}>SDK repository</a>, which has the SDK, the build and serve scripts, and a complete example source
+- Honya on an iPhone, iPad, or the iOS Simulator
+
+## Set up
+
+<Steps>
+
+1. Get the SDK and install its dependencies:
+
+   <Code lang="sh" code={`git clone ${sdkRepositoryURL} my-sources\ncd my-sources\nnpm install`} />
+
+2. Type-check, build and serve the repository:
+
+   ```sh
+   npm run dev
+   ```
+
+   This builds every source into `dist/` and serves it on port 8642, printing the addresses it can be reached at.
+
+3. In Honya, go to **Settings → Sources → Add Repository** and enter `http://localhost:8642` in the Simulator, or the network address `npm run dev` printed on a device on the same Wi-Fi.
+
+4. Tap **Get** next to a source to install it, then browse it from **Discover**.
+
+</Steps>
+
+## The repository's layout
+
+<FileTree>
+- sdk/ the types, the host API's declarations, and helpers
+  - types.ts
+  - host.d.ts
+  - helpers.ts
+- src/
+  - en/
+    - examplemanga/
+      - index.ts the source
+      - icon.png optional; used when `info.icon` isn't set
+- scripts/ build and serve
+- dist/ what `npm run build` writes, ready to publish
+- package.json `honya.repoName` names the repository
+</FileTree>
+
+Each source lives in `src/<lang>/<name>/index.ts`, where `<lang>` is an ISO 639-1 code like `en`, or `all` for a source with several languages.
+
+## Your first source
+
+Create `src/en/examplemanga/index.ts`. Here's a complete source for an imaginary site:
+
+```ts title="src/en/examplemanga/index.ts"
+import { fetchHTML, imgAttr, parseDate, queryString, relativeUrl, type HTMLNode, type Manga, type MangasPage, type Source } from "../../../sdk"
+
+const baseUrl = "https://manga.example"
+
+const source: Source = {
+  info: {
+    id: "712815673375441830", // md5("example manga/en/1"), as Mihon computes it
+    name: "Example Manga",
+    lang: "en",
+    version: "1.0.0",
+    baseUrl,
+    supportsLatest: true,
+    rateLimits: [{ host: "manga.example", permits: 2, periodMs: 1000 }],
+  },
+
+  getPopularManga(page) {
+    return mangaList(`${baseUrl}/popular?page=${page}`)
+  },
+
+  getLatestUpdates(page) {
+    return mangaList(`${baseUrl}/latest?page=${page}`)
+  },
+
+  searchManga(page, query) {
+    return mangaList(`${baseUrl}/search?${queryString([["q", query], ["page", page]])}`)
+  },
+
+  async getMangaDetails(manga) {
+    const document = await fetchHTML(baseUrl + manga.url)
+    return {
+      title: document.selectFirst("h1")?.text(),
+      author: document.selectFirst(".author")?.text(),
+      description: document.selectFirst(".synopsis")?.text(),
+      genres: document.select(".genres a").map((a) => a.text()),
+      status: document.selectFirst(".status")?.text() === "Completed" ? "completed" : "ongoing",
+    }
+  },
+
+  // Newest first.
+  async getChapterList(manga) {
+    const document = await fetchHTML(baseUrl + manga.url)
+    return document.select(".chapters li a").map((a) => ({
+      url: relativeUrl(a.attr("abs:href")),
+      name: a.selectFirst(".name")?.text() ?? a.text(),
+      dateUpload: parseDate(a.selectFirst("time")?.attr("datetime")),
+    }))
+  },
+
+  async getPageList(chapter) {
+    const document = await fetchHTML(baseUrl + chapter.url)
+    return document.select(".reader img").map((img) => ({ url: imgAttr(img) }))
+  },
+}
+
+async function mangaList(url: string): Promise<MangasPage> {
+  const document = await fetchHTML(url)
+  return {
+    mangas: document.select(".manga-card").map(mangaFromCard),
+    hasNextPage: document.selectFirst("a.next") != null,
+  }
+}
+
+function mangaFromCard(card: HTMLNode): Manga {
+  const link = card.selectFirst("a.title")
+  if (!link) throw new Error("card without a title link")
+  return {
+    url: relativeUrl(link.attr("abs:href")),
+    title: link.text(),
+    thumbnailUrl: card.selectFirst("img")?.attr("abs:src"),
+  }
+}
+
+export default source
+```
+
+<Aside title="The id">
+`info.id` must be the ID Mihon uses for the same source, so that libraries restored from Mihon backups find it. For a source Mihon doesn't have, use the same formula: the build prints the right value if yours doesn't match. See [Mihon compatibility](/developers/mihon-compatibility/).
+</Aside>
+
+## Try a change
+
+<Steps>
+
+1. Edit the source and run `npm run build` (or `npm run dev` again).
+2. Raise `version` in its `info`. Honya only offers an update when the version is newer.
+3. Pull down in **Settings → Sources** and tap **Update**.
+
+</Steps>
+
+Logs from `console.log` go to the app's log. On a Mac, open Console.app, choose the device or Simulator, and filter by the category `Extension <source name>`.
+
+## Next
+
+- [Anatomy of a source](/developers/source-anatomy/) covers every field and function.
+- [The host API](/developers/host-api/) is what a source can call.
+- [Publishing](/developers/publishing/) puts your repository online for others to add.

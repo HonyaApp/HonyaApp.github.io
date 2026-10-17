@@ -1,0 +1,86 @@
+# Builds the site for every pull request, and on main also publishes it to GitHub Pages. In the
+# repository's settings, Pages → Build and deployment → Source has to be "GitHub Actions". The
+# site's address is the SITE_URL repository variable if set (for a custom domain), else the
+# repository's Pages address, https://honyaapp.github.io.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  # A newer push to a pull request replaces its check; deploys of main finish in order.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v6
+      - name: Choose the site's address
+        env:
+          CUSTOM: ${{ vars.SITE_URL }}
+          PAGES: ${{ steps.pages.outputs.base_url }}
+        run: |
+          url="${CUSTOM:-${PAGES:-https://${{ github.repository_owner }}.github.io}}"
+          echo "SITE_URL=${url%/}" >> "$GITHUB_ENV"
+          echo "Building for ${url%/}"
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check
+      - run: npm run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+      - name: Check what universal links, shared links and the blocklist need
+        run: |
+          node -e 'JSON.parse(require("fs").readFileSync("dist/.well-known/apple-app-site-association", "utf8"))'
+          node -e 'const b = JSON.parse(require("fs").readFileSync("dist/blocklist.json", "utf8")); if (!Array.isArray(b.sources) || !Array.isArray(b.repositories)) process.exit(1)'
+          grep -q 'location.pathname.startsWith("/m/")' dist/404.html
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: dist
+          # Or .well-known, and with it universal links, is left out.
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
+      - name: Check the published site
+        env:
+          PAGE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: |
+          SITE_URL="${PAGE_URL%/}"
+          # Pages can take a moment to serve a new deployment everywhere.
+          for attempt in 1 2 3 4 5 6; do
+            if curl -fsS -o /dev/null "$SITE_URL/.well-known/apple-app-site-association"; then
+              status=$(curl -s -o /dev/null -w '%{http_code}' "$SITE_URL/m/0?u=%2F&t=Check")
+              [ "$status" = 404 ] && { echo "Published to $SITE_URL"; exit 0; }
+              echo "/m/ answered $status, expected the 404 page"
+            fi
+            sleep 10
+          done
+          echo "::error::$SITE_URL isn't serving the association file and the shared-link page yet"
+          exit 1

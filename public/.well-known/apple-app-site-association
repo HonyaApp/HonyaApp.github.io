@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["YTRF6LA392.com.notintheboxstudio.Yomu"],
+        "components": [
+          { "/": "/m/*", "comment": "A shared manga (MangaLink in the app)" }
+        ]
+      }
+    ]
+  }
+}
