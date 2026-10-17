@@ -42,7 +42,11 @@ Each source declares the version of Honya's source interface (its **host API**) 
 
 ## Adult content
 
-Sources say whether a site can show adult content. Those sources are marked **18+** in the list. Some repository authors also publish a separate repository without them.
+Sources say whether a site can show adult content, and those sources are marked **18+**. Honya hides them, along with your titles from them, until you turn on **Show 18+ Sources** in the filter menu on **Settings → Sources**. Turning it on asks your Apple Account whether you're 18 or older, or asks you if your account can't say.
+
+Turning it off hides them again. They stay installed, so turning it back on brings them and their titles back. With iCloud Sync on, the switch is the same on all your devices.
+
+Some repository authors also publish a separate repository without 18+ sources.
 
 ## Write your own
 

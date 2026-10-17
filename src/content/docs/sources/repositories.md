@@ -26,7 +26,7 @@ Once a repository is added, its sources are listed with the ones in your languag
 
 - **Show All Languages** lists sources in other languages too.
 - A source with several languages can be installed in each you want. Swipe a language to remove it.
-- Sources marked **18+** can show adult content.
+- Sources marked **18+** can show adult content. They're hidden until you turn on **Show 18+ Sources** in the filter menu, which checks your age first. See [Adult content](/sources/how-sources-work/#adult-content).
 - **Needs a newer app** means the source needs a newer version of Honya.
 
 If your library has titles from a source your repositories offer but you haven't installed, such as after restoring a backup, the Sources screen offers to install it.

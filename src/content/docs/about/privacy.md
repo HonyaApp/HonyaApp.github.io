@@ -5,7 +5,7 @@ description: What Honya keeps, what it sends and to whom, and what this website 
 
 _Last updated 18 October 2026._
 
-Honya has no account, and no analytics or tracking. Your library, reading history and settings belong to you and stay on your devices, or in your own iCloud account if you choose. The only things that reach us are the notes you send from **Send Feedback**.
+Honya has no account, and no analytics or tracking. Your library, reading history and settings belong to you and stay on your devices, or in your own iCloud account if you choose. The only things that reach us are the notes you send from **Send Feedback** and the reports you send from **Report a Source or Repository**.
 
 ## On your device
 
@@ -21,6 +21,10 @@ When you browse, search or read with a source, your device connects to that sour
 
 Adding or refreshing a repository downloads its listing and scripts from wherever it's hosted, often GitHub. When Honya checks your repositories, about once a day, it also downloads from this website the list of sources and repositories it has removed after reports. That request contains nothing about you or your library.
 
+## Age check
+
+Sources marked 18+ stay hidden until you turn on **Show 18+ Sources**. When you do, Honya asks your Apple Account, through Apple's Declared Age Range feature, whether you're 18 or older. You choose whether to share it, and Apple tells Honya only that, not your birthday. If your Apple Account can't say, Honya asks you instead. Honya keeps only whether the switch is on, synced with your other settings when iCloud Sync is on, and doesn't send your age anywhere.
+
 ## Other services Honya uses
 
 - **AniList.** For Discover's anime season banners, Honya asks [AniList](https://anilist.co) for each season's most popular anime. The request contains nothing about you or your library.
@@ -31,6 +35,12 @@ Adding or refreshing a repository downloads its listing and scripts from whereve
 When you send feedback from **Settings → Send Feedback**, Honya sends your note, its kind (a feature request, a problem, or something else), and any screenshots you attach. If you leave **Include Device Details** on, it adds your app version, device model, iOS version and language.
 
 Notes are stored in Honya's iCloud container, identified by an anonymous iCloud identifier rather than your name or email address. Only you and we can read them. We use them to improve Honya and fix problems, and nothing else.
+
+## Reports
+
+When you report a source or repository from **Settings → Report a Source or Repository**, Honya sends the reason you chose and anything you write. For a source, it adds the source's name, ID, language, version and website, and the repository it came from. For a repository, it adds the repository's name and address. It also adds your app version. A report has no screenshots and nothing from your library.
+
+Reports are stored like feedback: in Honya's iCloud container, identified by an anonymous iCloud identifier rather than your name or email address, and only you and we can read them. We use them to decide which sources and repositories Honya removes, and nothing else.
 
 ## Share links
 
