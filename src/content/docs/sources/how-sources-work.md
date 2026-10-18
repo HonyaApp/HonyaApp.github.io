@@ -48,6 +48,10 @@ Turning it off hides them again. They stay installed, so turning it back on brin
 
 Some repository authors also publish a separate repository without 18+ sources.
 
+## Your own files
+
+Honya also reads comics you already have, without any source to install: a folder of CBZ, CBR and PDF files in the Files app, or a Komga server. See [Your own files and Komga](/sources/your-files/).
+
 ## Write your own
 
 If there's a site you'd like to read in Honya, you can write a source for it. See [Writing sources](/developers/quick-start/).

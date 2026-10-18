@@ -11,6 +11,45 @@ Downloads carry on in the background. Follow them in **Settings → Download Que
 
 Downloaded chapters open without a connection, and look the same as they do online.
 
+## Export chapters
+
+To read downloaded chapters in another app, keep them on a computer, or move them to a Komga server, export them. Go to **Settings → Export Downloads**, select the titles you want, and tap the share button. To export just one title, open the **Download** menu on its page and choose **Export Downloads**.
+
+Choose a format for the chapters:
+
+- **CBZ**, which almost every comic reader opens. Each one includes a `ComicInfo.xml` with the series, chapter, author and genres.
+- **PDF**, which opens anywhere, Books included. Pages go in as they were downloaded, at full quality.
+- **Images**, a folder of page images per chapter.
+
+Everything comes as one zip, with a folder for each title:
+
+```text
+Honya Export 2026-10-18.zip
+└── Loner Life in Another World/
+    ├── cover.webp
+    ├── details.json
+    ├── Chapter 334.cbz
+    └── Chapter 335.cbz
+```
+
+Then share the zip: **Save to Files**, AirDrop it, or open it in another app. It's the same layout Honya reads [folders of your own files](/sources/your-files/) in, so unzipping it into a folder you've added (or into a Komga library) brings the titles back with their covers and details.
+
+## Choose how chapters are kept
+
+Honya keeps each downloaded chapter as a folder of page images. **Settings → Downloads → Save Chapters As** keeps each new chapter as one file instead:
+
+- **Images**: the pages as they were downloaded.
+- **CBZ**: one zip of the pages, unchanged inside.
+- **PDF**: one PDF, a page per image. A PDF keeps JPEG pages exactly as they are, but would have to change other kinds of images, so a chapter with WebP or PNG pages stays as images.
+
+Honya never changes a page to fit a format. Before it removes a chapter's images, it reads every page back from the new file and checks it's exactly what was downloaded; if one isn't, the chapter stays as images.
+
+- Every format takes about the same space. Pages are already compressed, so packing them saves only a percent or two.
+- Reading is as fast either way, and a download that's interrupted still carries on where it stopped: pages are downloaded one by one, then packed once the chapter is complete.
+- Changing the format offers to convert the chapters you've already downloaded. Converting back gives the same images, unchanged.
+- Downloads are kept inside Honya whatever the format, out of the Files app; to use chapters elsewhere, [export them](#export-chapters) from **Settings → Export Downloads**.
+- It's set on each device.
+
 ## Delete chapters after reading
 
 **Settings → Downloads → Delete Chapters** clears away downloads you've finished with:

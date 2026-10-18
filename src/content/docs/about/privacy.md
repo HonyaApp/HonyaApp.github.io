@@ -21,6 +21,12 @@ When you browse, search or read with a source, your device connects to that sour
 
 Adding or refreshing a repository downloads its listing and scripts from wherever it's hosted, often GitHub. When Honya checks your repositories, about once a day, it also downloads from this website the list of sources and repositories it has removed after reports. That request contains nothing about you or your library.
 
+## Your own files and Komga
+
+When you add a folder in **Settings → Sources**, Honya reads its files on your device. Nothing from them is uploaded, and titles from a folder stay out of iCloud Sync.
+
+When you add a Komga server, your device connects to it directly, and tells it which of its books you've read and how far, as Komga's own reader does. Your password or API key is kept in this device's keychain and only sent to that server. Titles from it sync through iCloud like any others; the sign-in doesn't. Connecting to a server on your home network asks for permission to use your local network.
+
 ## Age check
 
 Sources marked 18+ stay hidden until you turn on **Show 18+ Sources**. When you do, Honya asks your Apple Account, through Apple's Declared Age Range feature, whether you're 18 or older. You choose whether to share it, and Apple tells Honya only that, not your birthday. If your Apple Account can't say, Honya asks you instead. Honya keeps only whether the switch is on, synced with your other settings when iCloud Sync is on, and doesn't send your age anywhere.
