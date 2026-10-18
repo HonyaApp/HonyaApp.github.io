@@ -27,7 +27,7 @@ They're from sources you don't have yet. See [Titles without a source](/guide/ba
 
 ## Automatic updates run late
 
-iOS decides when apps get to run in the background, based on things like battery, connection and how often you use the app. An update that's overdue runs as soon as you open Honya. **Only on Wi-Fi** and **Only While Charging** make them run less often.
+iOS decides when apps get to run in the background, based on things like battery, connection and how often you use the app. Opening Honya starts an update if the last one was more than four hours ago, and pulling down in **Updates** checks straight away. **Only on Wi-Fi** and **Only While Charging** make them run less often.
 
 ## Downloads are paused
 

@@ -15,15 +15,14 @@ dist/sources/<lang>.<name>.js   one script per source module
 dist/icons/<lang>.<name>.png    from an icon.png beside index.ts, when info.icon isn't set
 ```
 
-It also writes `dist-sfw/`, the same repository with only the sources whose `info.nsfw` isn't `true`. Set `nsfw: true` on any source that can show adult content, or it will appear there.
+Set `nsfw: true` on any source that can show adult content. Honya marks it 18+ and keeps it hidden, with its titles, until someone 18 or older turns on **Show 18+ Sources**.
 
-Name the repositories in `package.json`:
+Name the repository in `package.json`. The name is shown in the app wherever the repository is listed:
 
 ```json
 {
   "honya": {
-    "repoName": "Example Sources",
-    "sfwRepoName": "Example Sources (SFW)"
+    "repoName": "Example Sources"
   }
 }
 ```
@@ -71,10 +70,12 @@ Users can add any of these:
 
 ### On GitHub
 
-The SDK's `.github/workflows/publish.yml` builds on every push to `main`, and force-pushes `dist/` to the `repo` branch and `dist-sfw/` to the `repo-sfw` branch. With the SDK at the root of a GitHub repository:
+The SDK's `.github/workflows/publish.yml` type-checks and builds on every push to `main`, then force-pushes `dist/` to the `repo` branch. With the SDK at the root of a GitHub repository:
 
 1. Push to `main`.
-2. Share `https://github.com/<you>/<repo>`, and `https://github.com/<you>/<repo>/tree/repo-sfw` for the SFW repository.
+2. Share `https://github.com/<you>/<repo>`.
+
+The SDK's own repository works this way: adding `https://github.com/HonyaApp/Extensions` in Honya installs its example source.
 
 ### Anywhere else
 

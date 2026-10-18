@@ -14,7 +14,7 @@ Any of these work:
 | The folder that holds the repository's `index.json` | `https://example.com/honya/` |
 | The `index.json` itself | `https://example.com/honya/index.json` |
 | A GitHub repository | `https://github.com/someone/their-sources` |
-| A branch or folder of a GitHub repository | `https://github.com/someone/their-sources/tree/repo-sfw` |
+| A branch or folder of a GitHub repository | `https://github.com/someone/their-sources/tree/beta` |
 
 For a GitHub repository, Honya reads `index.json` from its `repo` branch first, then from its default branch. That's where the [publishing workflow](/developers/publishing/) puts it.
 

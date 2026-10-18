@@ -21,6 +21,12 @@ From repositories other people publish. Honya doesn't list them. See [How source
 **Can I move my library from Mihon, Tachiyomi or Paperback?**
 Yes. Make a backup there and restore it in Honya. See [Backup and restore](/guide/backup-and-restore/).
 
+**Does Honya work with MyAnimeList, AniList or other trackers?**
+MyAnimeList, yes: sign in to update your list as you read, and to import or export it. See [MyAnimeList](/guide/myanimelist/). Other trackers aren't supported yet, but a Mihon backup keeps them for later.
+
+**What languages is Honya in?**
+English, Spanish, Brazilian Portuguese, Indonesian, Malay, Japanese, Simplified Chinese, Traditional Chinese, Thai and Vietnamese. Honya follows your device's language. To use a different one for Honya alone, choose it in the Settings app under **Apps → Honya → Language**. The translations are new, so if something reads wrong, tell us from **Send Feedback**. Titles, chapter names and descriptions come from your sources, in whatever language the site uses.
+
 **Is Honya on Android, Mac or the web?**
 Honya is for iPhone and iPad. A Mihon backup made in Honya restores in Mihon on Android.
 

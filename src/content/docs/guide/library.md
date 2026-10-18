@@ -10,10 +10,22 @@ The **Library** tab holds every title you've added, from all your sources, in on
 Categories split your library into tabs. Make and arrange them in **Settings → Library → Categories**. A title can be in more than one category, and titles in none of them are in **Uncategorized**.
 
 - **Default Category** decides where titles go when you add them. Choose **Always Ask** to pick each time.
-- To move titles, select them in the library and choose **Edit Categories**, or use **Edit Categories** on a title's page.
+- To move titles, [select them](#select-titles) in the library and choose **Edit Categories**, or use **Edit Categories** on a title's page.
 - Deleting a category asks where its titles should go. Titles also in other categories stay in those.
 
 With iCloud Sync on, your categories and default category are the same on all your devices.
+
+## Select titles
+
+Long-press a cover for what you can do with that title: **Edit Categories**, **Migrate** or **Remove from Library**. To do one of those to several titles at once, choose **Select**, then tap the other covers you want. **Select All** picks every title in the category you're on.
+
+The bar along the bottom then acts on every selected title:
+
+- **Edit Categories** moves them between categories.
+- **Migrate** moves them to another source. See [Migration](/guide/migration/).
+- **Remove from Library** asks first, then removes them and deletes their downloaded chapters. Their reading progress is kept, and comes back if you add them again.
+
+Tap **Cancel** to stop selecting.
 
 ## Sort, filter and display
 
@@ -42,6 +54,7 @@ A title's page has its details, chapters and everything you can do with it:
 - **Open in WebView** shows the title on its source's site, where you can sign in or solve a check the site asks for.
 - **Share** sends a link to the title. See [Sharing a title](/guide/sharing/).
 - **Migrate** moves the title to another source. See [Migration](/guide/migration/).
+- **Add to MAL** and **Remove from MAL** link the title to your MyAnimeList list, or take it off, once you've signed in. See [MyAnimeList](/guide/myanimelist/).
 
 ### Custom covers
 
@@ -49,6 +62,10 @@ While reading, long-press a page and choose **Set as Cover** to use it as the ti
 
 ## Duplicates and other names
 
-Adding a title that's already in your library from another source asks first, so you don't follow it twice.
+Adding a title that's already in your library from another source asks first, so you don't follow it twice. **Already in Library** shows the copy you have, with its source, chapters and latest upload, so you can compare it with the one you're adding:
+
+- **Migrate** moves the title you have to the one you're adding, with its reading progress, and with the rest of what you've chosen to carry over in [Migration](/guide/migration/#what-carries-over).
+- **Add Anyway** adds the new one beside it.
+- **Cancel** leaves your library as it is.
 
 Many titles go by several names, like an English and a Japanese title. To catch those too, turn on **Settings → Library → Look Up Alternative Titles**. Titles whose source lists no other names are then looked up on [MangaUpdates](https://www.mangaupdates.com) when you add them or restore a backup. Only the title and author are sent.

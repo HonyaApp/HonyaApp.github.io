@@ -15,6 +15,15 @@ When you finish a chapter, the next one follows on. Reading progress is saved as
 
 Set the mode most of your titles use in **Settings → Reader → Default Reading Mode**. Choosing a different mode while reading sets it for that title only.
 
+### Thumbnails in vertical scroll
+
+In vertical scroll, the page thumbnails run in a column down the right side of the screen, and the chapter buttons point up for the previous chapter and down for the next. **Thumbnails**, in **Reader Settings** while reading or in **Settings → Reader → Vertical Scroll**, moves them:
+
+- **Left** or **Right**: a column down that side.
+- **Bottom**: a row along the bottom, with the chapter buttons pointing left and right, as in the paged modes.
+
+It applies to every title.
+
 ## Page layout
 
 In the paged modes, **Page Layout** chooses how many pages you see:

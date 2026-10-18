@@ -43,6 +43,7 @@ export default defineConfig({
             "guide/downloads-and-storage",
             "guide/sharing",
             "guide/sync",
+            "guide/myanimelist",
             "guide/backup-and-restore",
             "guide/migration",
             "guide/appearance",

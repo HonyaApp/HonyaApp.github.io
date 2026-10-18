@@ -27,6 +27,14 @@ When you add a folder in **Settings → Sources**, Honya reads its files on your
 
 When you add a Komga server, your device connects to it directly, and tells it which of its books you've read and how far, as Komga's own reader does. Your password or API key is kept in this device's keychain and only sent to that server. Titles from it sync through iCloud like any others; the sign-in doesn't. Connecting to a server on your home network asks for permission to use your local network.
 
+## MyAnimeList
+
+Honya only talks to [MyAnimeList](https://myanimelist.net) once you sign in, in **Settings → MyAnimeList**. You sign in on MyAnimeList's own page, so Honya never sees your password. It gets a token that lets it read and change your manga list, keeps it in this device's keychain, and doesn't sync or back it up.
+
+While you're signed in, your device connects to MyAnimeList directly. Honya reads your user name and your manga list. It searches MyAnimeList by the names of the titles you add or check. And it changes your list: the chapters read, status, and start and finish dates of linked titles, and the titles you add or remove. Nothing is sent while you read in incognito mode, or for titles in categories you exclude. MyAnimeList's [privacy policy](https://myanimelist.net/about/privacy_policy) covers what it receives.
+
+Which titles are linked, and your MyAnimeList settings, are kept with your library: synced through iCloud if it's on, and in your backups.
+
 ## Age check
 
 Sources marked 18+ stay hidden until you turn on **Show 18+ Sources**. When you do, Honya asks your Apple Account, through Apple's Declared Age Range feature, whether you're 18 or older. You choose whether to share it, and Apple tells Honya only that, not your birthday. If your Apple Account can't say, Honya asks you instead. Honya keeps only whether the switch is on, synced with your other settings when iCloud Sync is on, and doesn't send your age anywhere.
@@ -34,6 +42,7 @@ Sources marked 18+ stay hidden until you turn on **Show 18+ Sources**. When you 
 ## Other services Honya uses
 
 - **AniList.** For Discover's anime season banners, Honya asks [AniList](https://anilist.co) for each season's most popular anime. The request contains nothing about you or your library.
+- **MyAnimeList.** Only once you sign in. See [MyAnimeList](#myanimelist).
 - **MangaUpdates.** With **Look Up Alternative Titles** on, Honya looks up the other names of titles you add or restore on [MangaUpdates](https://www.mangaupdates.com). Only each title's name and author are sent.
 
 ## Feedback

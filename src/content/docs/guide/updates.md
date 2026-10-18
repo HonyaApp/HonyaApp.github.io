@@ -13,10 +13,11 @@ From the list you can open a title, mark chapters read or unread, and download t
 
 ## Automatic updates
 
-Open **Update Settings** in Updates to choose how often Honya checks on its own, from every few hours to weekly, or off.
+Honya also checks on its own, as often as every four hours. **Update Settings** in Updates holds the choices below.
 
+- iOS decides when apps get to run in the background, so the library is checked in the background when iOS allows, which can be less often.
+- Opening Honya also starts an update, if the last one was more than four hours ago.
 - **Only on Wi-Fi** and **Only While Charging** limit when automatic updates run.
-- iOS decides when apps get to run in the background, so automatic updates can run late. An update that's overdue also runs when you open the app.
 
 ## Skip titles
 

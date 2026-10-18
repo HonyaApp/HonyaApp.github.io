@@ -17,7 +17,7 @@ Describes the source. The build copies it into the repository's `index.json`, so
 | `version` | required | Raise it for every release. Compared numerically: `"1.10.0"` is newer than `"1.9.2"`. |
 | `baseUrl` | required | The site's address. Relative URLs resolve against it. |
 | `supportsLatest` | | `true` if the source has `getLatestUpdates`. |
-| `nsfw` | | `true` if the site can show adult content. Such sources are marked 18+ and left out of SFW repositories. |
+| `nsfw` | | `true` if the site can show adult content. Such sources are marked 18+, and Honya hides them and their titles until someone 18 or older turns on **Show 18+ Sources**. |
 | `icon` | | Absolute URL of the icon. Left out, the build uses an `icon.png` beside `index.ts`. |
 | `aliases` | | Other Mihon source IDs this source stands in for, such as a renamed or merged one. |
 | `rateLimits` | | `[{ host, permits, periodMs }]`: how many requests to `host` Honya lets through per period. |

@@ -8,7 +8,8 @@ Sites come and go, and some have better scans or faster releases than others. Mi
 ## Migrate titles
 
 - **One title**: tap **Migrate** on its page.
-- **Several at once**: go to **Settings → Migrate**, where your library is listed by source. Choose the source to move away from, then the titles to move.
+- **Several at once**: [select them](/guide/library/#select-titles) in the library and tap **Migrate**. Or go to **Settings → Migrate**, where your library is listed by source: choose the source to move away from, then the titles to move.
+- **A title you're adding again**: adding a title from a new source when it's already in your library offers to migrate the copy you have. See [Duplicates](/guide/library/#duplicates-and-other-names).
 
 Choose which sources to search, in order of preference. Honya looks for each title on them and shows the best match. **Also Search Alternative Titles** tries a few of a title's other names when it isn't found by its own; it's slower, but finds more.
 
@@ -27,6 +28,6 @@ Choose what moves with each title:
 - **Categories**
 - **Notes**
 - **Custom Cover**
-- **Trackers**: the ones kept from a Mihon backup.
+- **Trackers**: the title's [MyAnimeList](/guide/myanimelist/) link, and any others kept from a Mihon backup.
 
 **Delete Downloads** removes the old title's downloads once it's moved.

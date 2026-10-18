@@ -10,7 +10,7 @@ description: Back up to a Honya or Mihon file, and restore from Honya, Mihon, Ta
 **Create Backup** saves your library, reading progress and settings to a file. Choose its kind:
 
 - **Honya backup** (`.honbako`, after 本箱, a book box): everything in the app. Restore it in Honya to get back exactly what you had, including settings, page bookmarks, custom covers and installed sources.
-- **Mihon backup** (`.tachibk`): what Mihon and its forks can restore, for taking your library to Android.
+- **Mihon backup** (`.tachibk`): what Mihon and its forks can restore, for taking your library to Android. Titles linked to [MyAnimeList](/guide/myanimelist/) carry Mihon's MyAnimeList tracker.
 
 Save it wherever you like: Files, iCloud Drive, or another app.
 
@@ -22,11 +22,11 @@ You can also open a backup from the Files app, or share it to Honya from another
 
 ### From Honya (`.honbako`)
 
-Titles, chapters, reading progress, bookmarks, history and categories, plus settings, page bookmarks, custom covers, source settings and repositories. The sources the backup had are installed from their repositories as it's restored, where they're still listed.
+Titles, chapters, reading progress, bookmarks, history and categories, plus settings, page bookmarks, custom covers, [MyAnimeList](/guide/myanimelist/) links, source settings and repositories. The sources the backup had are installed from their repositories as it's restored, where they're still listed.
 
 ### From Mihon or Tachiyomi (`.tachibk`)
 
-Titles, chapters, reading progress, bookmarks, history and categories. Each source's settings come across too, and anything Honya can't use yet, like trackers and some settings, is kept for later.
+Titles, chapters, reading progress, bookmarks, history and categories. Mihon's MyAnimeList tracker links titles for [MyAnimeList](/guide/myanimelist/). Each source's settings come across too, and anything Honya can't use yet, like other trackers and some settings, is kept for later.
 
 Each title is restored on the matching source in Honya, found by the same source ID Mihon uses. When your repositories offer a source your restored titles need, **Settings → Sources** offers to install it.
 

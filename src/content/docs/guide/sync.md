@@ -14,6 +14,7 @@ Turn on **Settings → iCloud Sync** to keep Honya the same on every iPhone and 
 - Discover's daily queue, its genres, and the titles you turned down
 - Discover's anime seasons, so only one device a week looks for their titles on your sources
 - Your source repositories and installed sources
+- Which titles are linked to [MyAnimeList](/guide/myanimelist/), and its settings
 
 Downloads can sync too, but that's a separate choice on each device, because they use your iCloud storage. See [Sync downloads through iCloud](/guide/downloads-and-storage/#sync-downloads-through-icloud).
 
@@ -23,6 +24,8 @@ Downloads can sync too, but that's a separate choice on each device, because the
 - Checking for new chapters, so each device keeps its own update schedule
 - The iCloud Sync settings themselves
 - The number of cover columns
+- Incognito mode and [App Lock](/guide/history-and-incognito/#app-lock)
+- Your MyAnimeList sign-in, so sign in on each device you want to update your list from
 
 Turning sync off keeps everything on the device you're using.
 

@@ -13,7 +13,7 @@ If you've written or read a [Mihon](https://mihon.app) extension, the functions 
 ## What you need
 
 - [Node.js](https://nodejs.org) 22 or later
-- The <a href={sdkRepositoryURL}>SDK repository</a>, which has the SDK, the build and serve scripts, and a complete example source
+- The <a href={sdkRepositoryURL}>SDK repository</a>, which has the SDK, the build and serve scripts, and Public Domain Comics, a complete example source
 - Honya on an iPhone, iPad, or the iOS Simulator
 
 ## Set up
@@ -38,24 +38,32 @@ If you've written or read a [Mihon](https://mihon.app) extension, the functions 
 
 </Steps>
 
+<Aside type="tip" title="See the example first">
+The SDK repository is a published repository too. Add <code>{sdkRepositoryURL}</code> in **Settings → Sources** to install Public Domain Comics without building anything.
+</Aside>
+
 ## The repository's layout
 
 <FileTree>
 - sdk/ the types, the host API's declarations, and helpers
+  - index.ts what `"../../../sdk"` imports
   - types.ts
   - host.d.ts
-  - helpers.ts
+  - helpers.ts requests, URLs, encoding, concurrency, images
+  - dates.ts
+  - crypto.ts
+  - nextjs.ts
 - src/
   - en/
-    - examplemanga/
-      - index.ts the source
-      - icon.png optional; used when `info.icon` isn't set
+    - publicdomaincomics/
+      - index.ts the example source
 - scripts/ build and serve
+- .github/workflows/publish.yml publishes `dist/` to the `repo` branch
 - dist/ what `npm run build` writes, ready to publish
 - package.json `honya.repoName` names the repository
 </FileTree>
 
-Each source lives in `src/<lang>/<name>/index.ts`, where `<lang>` is an ISO 639-1 code like `en`, or `all` for a source with several languages.
+Each source lives in `src/<lang>/<name>/index.ts`, where `<lang>` is an ISO 639-1 code like `en`, or `all` for a source with several languages. An `icon.png` beside it is used when `info.icon` isn't set. Public Domain Comics reads the Internet Archive's JSON APIs. For a site you read as HTML, start from the source below.
 
 ## Your first source
 
