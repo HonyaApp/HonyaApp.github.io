@@ -7,6 +7,12 @@ description: Your reading history, clearing it, reading without leaving a trace,
 
 **Settings → History** lists the chapters you've read, newest first, with the page you stopped on. Tap one to carry on from there, or swipe it to remove it from your history.
 
+## Excluded categories
+
+**Settings → Excluded Categories**, under History, leaves the titles in the categories you pick out of History and the [Now reading](/guide/library/#now-reading) bar. Reading them still saves your place and marks chapters read, so **Continue** on a title's page picks up where you stopped. Pick **Uncategorized** for titles in no category. Take a category off the list and its titles come back.
+
+Titles you haven't added to your library always show. Like your other settings, this syncs through iCloud and is backed up.
+
 ## Clear history
 
 **Settings → Clear History** removes your reading history. Chapters you've finished stay marked as read, so your library still knows where you are.

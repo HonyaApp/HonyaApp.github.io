@@ -12,6 +12,7 @@ Categories split your library into tabs. Make and arrange them in **Settings →
 - **Default Category** decides where titles go when you add them. Choose **Always Ask** to pick each time.
 - To move titles, [select them](#select-titles) in the library and choose **Edit Categories**, or use **Edit Categories** on a title's page.
 - Deleting a category asks where its titles should go. Titles also in other categories stay in those.
+- To stop a category being checked for new chapters, pick it in [Excluded Categories](/guide/updates/#skip-titles) in **Update Settings**.
 
 With iCloud Sync on, your categories and default category are the same on all your devices.
 

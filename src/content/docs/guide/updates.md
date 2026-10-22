@@ -7,7 +7,9 @@ Honya checks the titles in your library for new chapters and lists what it finds
 
 ## Check now
 
-Pull down in **Updates**, or tap **Update Library**, to check every title now. **Stop Updating** stops part way; the titles that weren't checked go first next time.
+Pull down in **Updates**, or tap **Update Library**, to check every title now. **Stop Updating** stops part way.
+
+An update that stops before it's done, whether you stopped it, iOS ended it in the background or Honya was closed, isn't started over. The next one, started by you or on its own, picks up where it stopped and checks only the titles it didn't get to.
 
 From the list you can open a title, mark chapters read or unread, and download them. Tap **Select** to do that to several at once.
 
@@ -27,6 +29,8 @@ Checking fewer titles makes updates faster and kinder to the sites your sources 
 - **With Unread Chapters**: you haven't caught up with what's there already.
 - **Not Started**: you haven't read any of it yet.
 - **Not Due for a Chapter**: a title is due when its usual release interval, worked out from its recent chapters, has passed.
+
+**Excluded Categories** leaves out every title in the categories you pick, such as one for series you've finished or dropped. Pick **Uncategorized** for titles in no category. Those titles aren't listed as skipped, and opening one still checks it for new chapters.
 
 These apply to every update, including ones you start yourself.
 

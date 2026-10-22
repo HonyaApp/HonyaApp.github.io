@@ -5,7 +5,7 @@ description: What Honya keeps, what it sends and to whom, and what this website 
 
 _Last updated 18 October 2026._
 
-Honya has no account, and no analytics or tracking. Your library, reading history and settings belong to you and stay on your devices, or in your own iCloud account if you choose. The only things that reach us are the notes you send from **Send Feedback** and the reports you send from **Report a Source or Repository**.
+Honya has no account, and no analytics or tracking. Your library, reading history and settings belong to you and stay on your devices, or in your iCloud account if you choose. The only things that reach us are the notes you send from **Send Feedback** and the reports you send from **Report a Source or Repository**.
 
 ## On your device
 

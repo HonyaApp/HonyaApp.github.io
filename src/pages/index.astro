@@ -6,7 +6,7 @@ import "@fontsource/shippori-mincho/800.css"
 import { appStoreURL, minimumOS } from "../config"
 
 const site = Astro.site ?? new URL(Astro.url.origin)
-const description = "Honya is a manga reader for iPhone and iPad: one calm place for every series you follow, that remembers where you stopped and keeps up with new chapters."
+const description = "Honya is a manga reader for iPhone and iPad: one place for every series you follow, that remembers where you stopped and keeps up with new chapters."
 
 const features = [
   {
@@ -85,7 +85,7 @@ const features = [
   <section class="hero">
     <div class="hero-text">
       <p class="eyebrow">Manga reader for iPhone and iPad</p>
-      <h1>One calm place for every series you follow.</h1>
+      <h1>One place for every series you follow.</h1>
       <p class="lede">Honya remembers where you stopped, keeps up with new chapters, and gets out of the way when it's time to read. Free, with no account to make.</p>
       <div class="actions">
         {appStoreURL ? (
@@ -103,14 +103,16 @@ const features = [
       <p class="requires">Needs iOS or iPadOS {minimumOS} or later.</p>
     </div>
 
+    <!-- As in the app's Settings → About. -->
     <aside class="definition" aria-label="What Honya means">
-      <p class="kana" lang="ja">ほんや</p>
-      <p class="word">hon·ya <i>noun</i></p>
-      <ol>
-        <li>a bookshop</li>
-        <li>a bookseller</li>
-      </ol>
-      <p class="why">Named after the bookshop round the corner: the shelves you know by heart, a place kept for where you stopped, and something new each time you drop in.</p>
+      <p class="headword"><span class="kanji" lang="ja">本屋</span> <span class="kana" lang="ja">ほんや</span></p>
+      <p class="word"><i>hon·ya</i> <span>noun</span></p>
+      <p class="senses">1. a bookshop&ensp; 2. a bookseller</p>
+      <p class="parts">
+        <span><b lang="ja">本</b> <i>hon</i><span>, book</span></span>
+        <span><b lang="ja">屋</b> <i>ya</i><span>, shop</span></span>
+      </p>
+      <p class="why">We named it after the bookshop round the corner: the shelves you know by heart, a place kept for where you stopped, and something new each time you drop in. The <span lang="ja">書</span> on the icon is the character for books.</p>
     </aside>
   </section>
 
@@ -348,11 +350,24 @@ const features = [
     background: color-mix(in srgb, var(--panel) 70%, transparent);
     border-radius: 0 0 18px 18px;
   }
-  .definition p, .definition ol { margin: 0; }
-  .kana { font: 800 40px/1 var(--mincho); letter-spacing: 0.04em; }
-  .word { margin-top: 12px !important; font-size: 17px; font-weight: 600; }
-  .word i { font-weight: 400; color: var(--muted); }
-  .definition ol { margin-top: 8px; padding-left: 22px; color: var(--muted); }
+  .definition p { margin: 0; }
+  .headword { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  .kanji { font: 800 44px/1 var(--mincho); letter-spacing: 0.02em; }
+  .kana { font-size: 15px; color: var(--muted); }
+  .word { margin-top: 10px !important; font-size: 17px; }
+  .word span { color: var(--muted); }
+  .senses { margin-top: 8px !important; }
+  .parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    margin-top: 14px !important;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  .parts b { font: 800 22px/1 var(--mincho); margin-right: 4px; }
+  .parts span span { color: var(--muted); }
   .why {
     margin-top: 18px !important;
     padding-top: 16px;

@@ -32,7 +32,7 @@ Honya Export 2026-10-18.zip
     └── Chapter 335.cbz
 ```
 
-Then share the zip: **Save to Files**, AirDrop it, or open it in another app. It's the same layout Honya reads [folders of your own files](/sources/your-files/) in, so unzipping it into a folder you've added (or into a Komga library) brings the titles back with their covers and details.
+Then share the zip: **Save to Files**, AirDrop it, or open it in another app. It's the same layout Honya reads [folders of your files](/sources/your-files/) in, so unzipping it into a folder you've added (or into a Komga library) brings the titles back with their covers and details.
 
 ## Choose how chapters are kept
 

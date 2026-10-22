@@ -18,7 +18,15 @@ Any of these work:
 
 For a GitHub repository, Honya reads `index.json` from its `repo` branch first, then from its default branch. That's where the [publishing workflow](/developers/publishing/) puts it.
 
-Whoever publishes the repository will tell you its address. Honya doesn't list repositories itself.
+## Finding a repository
+
+Honya doesn't list or recommend repositories, and it comes with none. Repositories are made by the people who write sources, and they share the address themselves: on their website, their GitHub page or in their community. Copy it from there and add it in Honya.
+
+Before you add one, think about who makes it. Sources are scripts that can see what you browse in them, so only add repositories you trust. See [How sources work](/sources/how-sources-work/).
+
+To try Honya before you find one, add the example repository at `https://github.com/HonyaApp/Extensions`. Its sources read public-domain comics and Pepper&Carrot, which are free to read.
+
+You can also make a repository yourself. See [Quick start](/developers/quick-start/).
 
 ## Choosing sources
 

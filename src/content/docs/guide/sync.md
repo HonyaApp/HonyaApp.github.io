@@ -33,4 +33,4 @@ Turning sync off keeps everything on the device you're using.
 
 The iCloud Sync screen shows the last time Honya synced, and changes going up or coming down as they happen. **Sync Now** checks straight away. Changes made on another device usually arrive quickly, as iCloud tells Honya about them.
 
-Your data is kept in your own iCloud account. Honya's developers can't see it. See [Privacy](/about/privacy/).
+Your data is kept in your iCloud account. Honya's developers can't see it. See [Privacy](/about/privacy/).
