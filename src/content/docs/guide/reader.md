@@ -32,7 +32,7 @@ In the paged modes, **Page Layout** chooses how many pages you see:
 - **Double**: two pages side by side. Wide pages, like spreads, still show alone.
 - **Auto**: two pages side by side when the screen is wider than it is tall, and one otherwise.
 
-If two-page spreads come out split across the wrong pair, turn on **Shift Pages by One** to move every pair along by a page.
+If two-page spreads come out split across the wrong pair, turn on **Shift Pages by One** to move every pair along by a page. If the two halves come out on the wrong sides, turn on **Swap Facing Pages** to swap the pages on each screen.
 
 ## Display
 
@@ -42,7 +42,7 @@ If two-page spreads come out split across the wrong pair, turn on **Shift Pages 
 
 ## Settings for one title
 
-Page layout, shifting, background, cropping and the reading mode are defaults: changing one in **Reader Settings** while reading sets it for that title, and other titles keep the defaults from **Settings → Reader**. **Use Defaults for This Title** puts a title back on the defaults.
+Page layout, shifting, swapping, background, cropping and the reading mode are defaults: changing one in **Reader Settings** while reading sets it for that title, and other titles keep the defaults from **Settings → Reader**. **Use Defaults for This Title** puts a title back on the defaults.
 
 With iCloud Sync on, both the defaults and each title's own settings are the same on all your devices.
 

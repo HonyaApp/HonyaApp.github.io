@@ -76,5 +76,6 @@ Download sync is set on each device.
 **Settings → Storage** shows how much space Honya uses on this device, and what you can free:
 
 - **Downloads**, title by title. Select titles or chapters to delete them, or use **Delete Read Chapters** to remove every chapter you've finished. Bookmarked chapters are kept.
+- **Honya Folder**, the files you've put in [Honya's folder](/sources/your-files/#the-honya-folder) in the Files app, once there are some. **Delete All Files** deletes every file there and takes their titles out of your library. It can't be undone.
 - **Caches** hold covers and pages you've seen, so they load quickly next time. Clearing them keeps your downloads, and you stay signed in to sites. They fill again as you browse and read.
 - **App Data** is what the app needs to work: your library, history and installed sources. Sources can be removed in **Settings → Sources**.

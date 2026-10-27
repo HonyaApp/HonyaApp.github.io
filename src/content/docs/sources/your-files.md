@@ -3,9 +3,27 @@ title: Your own files and Komga
 description: Read CBZ, CBR and PDF files from a folder in Files, or the comics on your Komga server, and how to lay out the folder so Honya finds everything.
 ---
 
-Besides sources from repositories, Honya reads comics you already have: a **folder** of files you pick in the Files app, or a **Komga server** you run. Their titles join your library by themselves, and new ones turn up as you add them.
+Besides sources from repositories, Honya reads comics you already have: files in **Honya's folder** in the Files app, a **folder** of files you pick, or a **Komga server** you run. Their titles join your library by themselves, and new ones turn up as you add them.
 
-To add one, go to **Settings → Sources** and tap **Add Folder or Komga Server**.
+Honya's folder needs no setting up. To add another folder or a server, go to **Settings → Sources** and tap **Add Folder or Komga Server**.
+
+## The Honya folder
+
+Honya has a folder of its own in the Files app: **On My iPhone → Honya** (**On My iPad → Honya** on an iPad). Put CBZ, CBR and PDF files in it and they join your library the next time you open Honya, with nothing to choose or set up. It's laid out like any other folder: see [Lay out the folder](#lay-out-the-folder).
+
+To get files into it:
+
+- **In the Files app**, move or copy them to On My iPhone → Honya, from Downloads, iCloud Drive or anywhere else.
+- **From a Mac**, connect your iPhone or iPad, select it in the Finder sidebar, click **Files**, and drag files onto **Honya**.
+- **From Safari, Mail or another app**, share a CBZ, CBR or PDF file and choose **Honya**, or use **Open With → Honya** in Files. Honya copies it into its folder and opens it. Sharing the same file again doesn't add a second copy.
+
+While the folder has no titles, Honya keeps a page called **How to Add Titles** in it, which is what keeps the folder showing in Files: Files hides an app's empty folder. You can delete the page once you've added files.
+
+Once there's something in the folder, it shows in **Settings → Sources** as **Honya Folder**, with **Show in Files** to find it, and in **Discover** to browse. It has no **Remove Source** button: it goes away when its files do.
+
+Delete a title's files or folder in the Files app and the title leaves your library the next time Honya checks the folder. Its reading progress stays, for if you put the same files back. This is only for the Honya folder: titles from a folder you pick stay in your library when their files are gone, since that folder may just be out of reach.
+
+The files count towards Honya's space in **Settings → Storage**, and they're included in your device's backups. **Delete All Files** there deletes everything in the folder and takes its titles out of your library. It can't be undone. To delete only some files, use the Files app.
 
 ## Add a folder
 
@@ -119,11 +137,12 @@ Your reading progress is kept by each chapter's path in the folder. **Renaming o
 
 ## Where to keep the folder
 
+- **[The Honya folder](#the-honya-folder)** needs no setting up, and works offline.
 - **On My iPhone or On My iPad** is the quickest, and works offline.
 - **iCloud Drive** works too. Files download when you open them; to read offline, long-press the folder in Files and choose **Keep Downloaded**.
 - **Other places Files reaches**, like a connected drive or a file server, work while they're connected. Pages load as fast as the connection allows.
 
-Comics in a folder are already on your device, so their chapters have no download button. Honya unpacks CBR chapters and draws PDF pages into its cache as you read, and clears the oldest when the cache passes 1 GB. **Settings → Storage** doesn't count your files themselves.
+Comics in a folder are already on your device, so their chapters have no download button. Honya unpacks CBR chapters and draws PDF pages into its cache as you read, and clears the oldest when the cache passes 1 GB. **Settings → Storage** doesn't count the files in a folder you pick, only those in the Honya folder.
 
 Titles from a folder stay on this device: [iCloud Sync](/guide/sync/) leaves them out, since your other devices can't open the files. To read the same folder on another device, add it there too.
 
