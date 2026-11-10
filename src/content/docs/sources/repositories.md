@@ -26,7 +26,7 @@ Before you add one, think about who makes it. Sources are scripts that can see w
 
 To try Honya before you find one, add the example repository at `https://github.com/HonyaApp/Extensions`. Its sources read public-domain comics and Pepper&Carrot, which are free to read.
 
-You can also make a repository yourself. See [Quick start](/developers/quick-start/).
+You can also make a repository without writing code: an AI agent ports the sources from Keiyoushi's Mihon extensions for you. See [Making a repository with AI](/sources/making-a-repository/). To write sources yourself, see [Quick start](/developers/quick-start/).
 
 ## Choosing sources
 

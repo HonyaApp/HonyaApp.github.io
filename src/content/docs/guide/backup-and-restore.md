@@ -1,6 +1,6 @@
 ---
 title: Backup and restore
-description: Back up to a Honya or Mihon file, and restore from Honya, Mihon, Tachiyomi and Paperback backups.
+description: Back up to a Honya or Mihon file, by hand or automatically, and restore from Honya, Mihon, Tachiyomi and Paperback backups.
 ---
 
 **Settings → Backup and Restore** saves your library to a file, and brings a library in from one.
@@ -13,6 +13,12 @@ description: Back up to a Honya or Mihon file, and restore from Honya, Mihon, Ta
 - **Mihon backup** (`.tachibk`): what Mihon and its forks can restore, for taking your library to Android. Titles linked to [MyAnimeList](/guide/myanimelist/) carry Mihon's MyAnimeList tracker.
 
 Save it wherever you like: Files, iCloud Drive, or another app.
+
+## Automatic backups
+
+Set **Automatic Backups** to **Daily** or **Weekly**, and Honya makes a Honya backup once a day or once a week, as you leave the app. It's saved as `Honya_auto.honbako` in **On My iPhone → Honya → Backups** (**On My iPad → Honya → Backups** on an iPad), and each new one replaces it. Backups you save there with **Create Backup** are left alone.
+
+To restore it, tap it in the Files app, or pick it in **Restore Backup**. The setting and the backup stay on each device.
 
 ## Restore a backup
 

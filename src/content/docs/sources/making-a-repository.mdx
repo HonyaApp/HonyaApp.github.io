@@ -1,0 +1,94 @@
+---
+title: Making a repository with AI
+description: Make a Honya repository on GitHub with an AI agent that ports sources from Keiyoushi for you, without writing code or typing commands.
+---
+
+import { Aside, Steps } from "@astrojs/starlight/components"
+import { sdkRepositoryURL } from "../../../config"
+
+You don't have to be a developer to make a repository. [Keiyoushi](https://github.com/keiyoushi/extensions-source) publishes the code of well over a thousand Mihon extensions, and an AI agent can turn the ones you want into Honya sources, in a repository on GitHub that Honya can add. You say what you want in plain words, the agent does the work with Honya's SDK, and GitHub publishes the result.
+
+## What you need
+
+- A [GitHub](https://github.com) account. It's free.
+- An AI coding agent that works on GitHub repositories in your browser, such as [Claude Code](https://claude.ai/code), [Codex](https://chatgpt.com/codex) or [GitHub Copilot](https://github.com/features/copilot). Most need a paid plan.
+
+Everything happens on GitHub and in the agent, so there's nothing to install on your computer.
+
+## Make the repository
+
+<Steps>
+
+1. Sign in to GitHub and open the <a href={sdkRepositoryURL}>Honya SDK repository</a>.
+
+2. Click **Use this template**, then **Create a new repository**.
+
+3. Give it a name, such as `honya-sources`. Leave it **Public**, so Honya can read it, and click **Create repository**.
+
+</Steps>
+
+The repository starts as a copy of the SDK: the tools that build sources, instructions for AI agents, and a few example sources. Whenever it changes, GitHub builds it and publishes it for Honya automatically.
+
+## Connect the agent
+
+In the agent, connect your GitHub account and give it access to the repository you made. When GitHub asks which repositories the agent may use, choose only that one.
+
+If the agent later says it can't download Keiyoushi's code or the tools it needs, look in its settings for internet access and turn it on.
+
+## Ask for sources
+
+Start a task on your repository and say which sites you want, by the names their extensions have in Mihon:
+
+> Port the Keiyoushi extension for Example Manga.
+
+Before it changes anything, the agent asks you what Honya should call the repository, the first time, and which sites you want, if you haven't said. With the first source, it also removes the SDK's examples.
+
+The SDK tells the agent the rest: how to port an extension and check its work, which sources to mark 18+, and how to keep titles restored from a Mihon backup working.
+
+Ask for a few sites at a time rather than dozens. The agent does better work, and there's less to try at once.
+
+## Publish
+
+When the agent's done, its work arrives as a **pull request**: a proposed change to your repository. Some agents open it themselves; with others, you press a button such as **Create PR**.
+
+<Steps>
+
+1. Open the pull request on GitHub and read what the agent says it did, and what it couldn't port.
+
+2. Click **Merge pull request**, then **Confirm merge**.
+
+3. Wait a minute or two while GitHub publishes it. The repository's **Actions** tab shows a green tick when it's done. A red cross means something went wrong: tell the agent.
+
+</Steps>
+
+## Add it in Honya
+
+Copy your repository's address from the browser's address bar, such as `https://github.com/you/honya-sources`. In Honya, go to **Settings → Sources**, tap **Add Repository** and paste it, then tap **Get** next to a source to install it. See [Adding a repository](/sources/repositories/).
+
+## When a source doesn't work
+
+Tell the agent what you did and what happened, in plain words:
+
+> In Example Manga, searching finds nothing.
+
+> Chapters of Example Title show no pages.
+
+It fixes the source in a new pull request. Merge it and wait for the green tick, then in Honya pull down in **Settings → Sources** and tap **Update**.
+
+## Keep them up to date
+
+Sites change, and Keiyoushi updates its extensions to keep up. Every so often, ask:
+
+> Update the sources from Keiyoushi.
+
+The agent compares each source with Keiyoushi's latest code and puts what's changed in a pull request. Merge it, and Honya offers the updates.
+
+## Good to know
+
+- **Your repository is public.** Anyone with its address can add it in Honya, and read its code.
+- **Sources with adult content are marked 18+**, from Keiyoushi's ratings. Honya hides them until someone 18 or older turns on **Show 18+ Sources**.
+- **Keiyoushi's code is free to reuse** under the Apache License 2.0, which asks for credit. The agent keeps the license and the credit in your repository.
+
+<Aside type="caution">
+Make sources only for sites that have the rights to what they show. Honya doesn't host, check or list repositories: whoever publishes one is responsible for what its sources offer. Sources and repositories reported for illegal content, or for adult content that isn't marked 18+, can be [removed by Honya](/sources/repositories/#sources-honya-removed).
+</Aside>

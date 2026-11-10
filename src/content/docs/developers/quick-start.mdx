@@ -61,6 +61,7 @@ The SDK repository is a published repository too. Add <code>{sdkRepositoryURL}</
 - .github/workflows/publish.yml publishes `dist/` to the `repo` branch
 - dist/ what `npm run build` writes, ready to publish
 - package.json `honya.repoName` names the repository
+- AGENTS.md instructions for AI agents, including porting from Keiyoushi
 </FileTree>
 
 Each source lives in `src/<lang>/<name>/index.ts`, where `<lang>` is an ISO 639-1 code like `en`, or `all` for a source with several languages. An `icon.png` beside it is used when `info.icon` isn't set. Public Domain Comics reads the Internet Archive's JSON APIs. For a site you read as HTML, start from the source below.
@@ -166,3 +167,4 @@ Logs from `console.log` go to the app's log. On a Mac, open Console.app, choose 
 - [Anatomy of a source](/developers/source-anatomy/) covers every field and function.
 - [The host API](/developers/host-api/) is what a source can call.
 - [Publishing](/developers/publishing/) puts your repository online for others to add.
+- [Making a repository with AI](/sources/making-a-repository/) has an AI agent port Keiyoushi's Mihon extensions, following `AGENTS.md`.

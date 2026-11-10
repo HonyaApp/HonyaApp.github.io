@@ -53,7 +53,7 @@ export default defineConfig({
         },
         {
           label: "Sources",
-          items: ["sources/how-sources-work", "sources/repositories", "sources/your-files"],
+          items: ["sources/how-sources-work", "sources/repositories", "sources/making-a-repository", "sources/your-files"],
         },
         {
           label: "Writing sources",

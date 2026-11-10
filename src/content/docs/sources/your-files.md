@@ -19,11 +19,13 @@ To get files into it:
 
 While the folder has no titles, Honya keeps a page called **How to Add Titles** in it, which is what keeps the folder showing in Files: Files hides an app's empty folder. You can delete the page once you've added files.
 
+With [automatic backups](/guide/backup-and-restore/#automatic-backups) on, Honya keeps its latest backup in a **Backups** folder in there. That folder isn't read as a title.
+
 Once there's something in the folder, it shows in **Settings → Sources** as **Honya Folder**, with **Show in Files** to find it, and in **Discover** to browse. It has no **Remove Source** button: it goes away when its files do.
 
 Delete a title's files or folder in the Files app and the title leaves your library the next time Honya checks the folder. Its reading progress stays, for if you put the same files back. This is only for the Honya folder: titles from a folder you pick stay in your library when their files are gone, since that folder may just be out of reach.
 
-The files count towards Honya's space in **Settings → Storage**, and they're included in your device's backups. **Delete All Files** there deletes everything in the folder and takes its titles out of your library. It can't be undone. To delete only some files, use the Files app.
+The files count towards Honya's space in **Settings → Storage**, and they're included in your device's backups. **Delete All Files** there deletes everything in the folder, the automatic backup too, and takes its titles out of your library. It can't be undone. To delete only some files, use the Files app.
 
 ## Add a folder
 
