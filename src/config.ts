@@ -5,7 +5,7 @@
  * coming to the App Store instead of linking there, and the share page leaves out Safari's
  * app banner.
  */
-export const appStoreID: string | null = null
+export const appStoreID: string | null = "6822836997"
 
 export const appStoreURL = appStoreID ? `https://apps.apple.com/app/id${appStoreID}` : null
 

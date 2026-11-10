@@ -31,16 +31,16 @@ const site = Astro.site ?? new URL(Astro.url.origin)
 <!-- Once Honya is on the App Store (appStoreID in src/config.ts): Safari's banner, which offers
      Open where it's installed and Get where it isn't. -->
 {appStoreID && <meta name="apple-itunes-app" content={`app-id=${appStoreID}`}>}
-<meta name="theme-color" content="#F4EFE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141B33" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style is:inline>
-  /* The app icon's indigo and cream: cream paper with indigo ink, or the other way round. */
+  /* The app icon's indigo and cream: indigo ink on white, or cream on indigo. */
   :root {
     --indigo: #24346A;
     --cream: #F4EFE6;
-    --bg: var(--cream);
+    --bg: #FFFFFF;
     --ink: #1B2550;
     --muted: #6B6A72;
     --rule: rgba(36, 52, 106, 0.14);

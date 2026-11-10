@@ -1,6 +1,6 @@
-/* The app icon's indigo and cream, as Starlight's colours: indigo ink on cream paper in light
-   mode, cream on a night indigo in dark. Starlight names its scale for dark mode, so in light
-   mode "white" is the darkest ink and "black" the paper. */
+/* The app icon's indigo and cream, as Starlight's colours: indigo ink on white in light mode,
+   cream on a night indigo in dark. Starlight names its scale for dark mode, so in light mode
+   "white" is the darkest ink and "black" the page. */
 :root {
   --sl-color-accent-low: #222d57;
   --sl-color-accent: #6f86d9;
@@ -26,10 +26,10 @@
   --sl-color-gray-2: #353a52;
   --sl-color-gray-3: #5a5c6b;
   --sl-color-gray-4: #8a8a92;
-  --sl-color-gray-5: #cdc6b9;
-  --sl-color-gray-6: #e8e1d4;
-  --sl-color-gray-7: #efe9de;
-  --sl-color-black: #f7f3eb;
+  --sl-color-gray-5: #cdd1dc;
+  --sl-color-gray-6: #eceef4;
+  --sl-color-gray-7: #f4f5f9;
+  --sl-color-black: #ffffff;
 }
 
 /* Page titles, section headings and the site's name in the Mincho of the app's About screen. */
