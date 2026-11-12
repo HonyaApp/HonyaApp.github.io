@@ -15,7 +15,7 @@ From the list you can open a title, mark chapters read or unread, and download t
 
 ## Automatic updates
 
-Honya also checks on its own, as often as every four hours. **Update Settings** in Updates holds the choices below.
+Honya also checks on its own, as often as every four hours. **Update Settings** in Updates holds the choices below, and so does **Settings → Library**.
 
 - iOS decides when apps get to run in the background, so the library is checked in the background when iOS allows, which can be less often.
 - Opening Honya also starts an update, if the last one was more than four hours ago.

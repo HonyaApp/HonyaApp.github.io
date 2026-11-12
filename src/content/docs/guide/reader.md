@@ -54,3 +54,19 @@ With iCloud Sync on, both the defaults and each title's own settings are the sam
 ## Share or save a page
 
 Long-press a page to open the share sheet for its image. From there you can send it, save it to Photos, or choose **Set as Cover** to make it the title's cover in Honya.
+
+## Keyboard
+
+With a keyboard attached to your iPhone or iPad, these keys work while you read:
+
+- **→**, **↓**, **Space** or **Page Down**: the next page.
+- **←**, **↑**, **Shift-Space** or **Page Up**: the previous page.
+- **Esc**: close the reader.
+
+In right to left, **←** turns forward and **→** back, as the pages do. In vertical scroll, each press moves a whole page.
+
+## Handoff
+
+While you read, your other iPhones and iPads signed in to the same Apple Account offer to carry on there. Open Honya from the Handoff banner at the bottom of the app switcher, or at the end of the Dock on an iPad, and it opens the same chapter at the same page. That device needs the same source installed.
+
+Handoff isn't offered in [incognito mode](/guide/history-and-incognito/#incognito-mode), with [App Lock](/guide/history-and-incognito/#app-lock) on, or for titles from a [folder on your device](/sources/your-files/).

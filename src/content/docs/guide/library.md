@@ -44,6 +44,12 @@ Sorting and filters can be set for every category at once. The number of columns
 
 Once you've read something, a **Now reading** bar sits above the tab bar on the library. Tap it to go straight back to the title you were reading. On a title's page, the same place holds its **Continue** button.
 
+## Spotlight
+
+Titles in your library show up in Spotlight, so searching from the home screen finds one by its name, its [other names](#duplicates-and-other-names) or its author. Tap it to open its page in Honya. Spotlight catches up when you leave Honya.
+
+It leaves out titles in [History's excluded categories](/guide/history-and-incognito/#excluded-categories), titles from 18+ sources while **Show 18+ Sources** is off, and all of them while [App Lock](/guide/history-and-incognito/#app-lock) is on. You can also keep Honya out of search in the Settings app.
+
 ## A title's page
 
 A title's page has its details, chapters and everything you can do with it:

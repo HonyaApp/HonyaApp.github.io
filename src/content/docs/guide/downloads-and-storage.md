@@ -13,7 +13,7 @@ Downloaded chapters open without a connection, and look the same as they do onli
 
 ## Export chapters
 
-To read downloaded chapters in another app, keep them on a computer, or move them to a Komga server, export them. Go to **Settings → Export Downloads**, select the titles you want, and tap the share button. To export just one title, open the **Download** menu on its page and choose **Export Downloads**.
+To read downloaded chapters in another app, keep them on a computer, or move them to a Komga server, export them. Go to **Settings → Storage → Downloads**, tap **Select**, choose the titles you want, and tap the share button. To export just one title, open the **Download** menu on its page and choose **Export Downloads**.
 
 Choose a format for the chapters:
 
@@ -47,7 +47,7 @@ Honya never changes a page to fit a format. Before it removes a chapter's images
 - Every format takes about the same space. Pages are already compressed, so packing them saves only a percent or two.
 - Reading is as fast either way, and a download that's interrupted still carries on where it stopped: pages are downloaded one by one, then packed once the chapter is complete.
 - Changing the format offers to convert the chapters you've already downloaded. Converting back gives the same images, unchanged.
-- Downloads are kept inside Honya whatever the format, out of the Files app; to use chapters elsewhere, [export them](#export-chapters) from **Settings → Export Downloads**.
+- Downloads are kept inside Honya whatever the format, out of the Files app; to use chapters elsewhere, [export them](#export-chapters) from **Settings → Storage → Downloads**.
 - It's set on each device.
 
 ## Delete chapters after reading
@@ -75,7 +75,7 @@ Download sync is set on each device.
 
 **Settings → Storage** shows how much space Honya uses on this device, and what you can free:
 
-- **Downloads**, title by title. Select titles or chapters to delete them, or use **Delete Read Chapters** to remove every chapter you've finished. Bookmarked chapters are kept.
+- **Downloads**, title by title. Select titles or chapters to delete them, select titles to [export them](#export-chapters), or use **Delete Read Chapters** to remove every chapter you've finished. Bookmarked chapters are kept.
 - **Honya Folder**, the files you've put in [Honya's folder](/sources/your-files/#the-honya-folder) in the Files app, once there are some. **Delete All Files** deletes every file there, the [automatic backup](/guide/backup-and-restore/#automatic-backups) too, and takes their titles out of your library. It can't be undone.
 - **Caches** hold covers and pages you've seen, so they load quickly next time. Clearing them keeps your downloads, and you stay signed in to sites. They fill again as you browse and read.
 - **App Data** is what the app needs to work: your library, history and installed sources. Sources can be removed in **Settings → Sources**.
