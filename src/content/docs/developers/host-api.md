@@ -15,8 +15,8 @@ Only call `Honya` from your source's functions, not while the module loads: the 
 | `request(request)` | Sends an HTTP request. See below. |
 | `parseHTML(html, baseUrl?)` | Parses HTML natively and returns the document as an [`HTMLNode`](#htmlnode). Relative links resolve against `baseUrl`, which defaults to `info.baseUrl`. |
 | `prefs.get(key)` / `prefs.set(key, value)` | The source's own settings: strings, numbers, booleans or string arrays. Setting `null` or `undefined` removes one. A Mihon backup restores its source's settings here. |
-| `localStorage(url, key)` | What the site keeps in the web view's `localStorage` under `key`, or `null`. Mihon's `getLocalStorage`, for sites that hand out tokens there once visited. |
-| `loadInWebView(url, options?)` | Opens `url` in a hidden web view that shares the visible one's cookies and storage, for sites whose scripts must run to issue a token. With `waitForLocalStorage: key`, resolves with that key's value as soon as the page sets it; otherwise after `timeoutMs` (default 15 s, at most 60 s). |
+| `localStorage(url, key)` | What the site keeps in the web view's `localStorage` under `key`, or `null`. Mihon's `getLocalStorage`, for sites that hand out tokens there once visited. Only for the source's own site: `info.baseUrl`'s host, less `www.`, and its subdomains. Any other URL rejects. |
+| `loadInWebView(url, options?)` | Opens `url` in a hidden web view that shares the visible one's cookies and storage, for sites whose scripts must run to issue a token. With `waitForLocalStorage: key`, resolves with that key's value as soon as the page sets it; otherwise after `timeoutMs` (default 15 s, at most 60 s). Only for the source's own site, as with `localStorage`, and the value is read only while the page is still on it. |
 | `sleep(ms)` | Waits, up to a minute. |
 | `log(level, message)` | Writes to the app's log at `"debug"`, `"info"`, `"warn"` or `"error"`. |
 
@@ -26,7 +26,7 @@ Only call `Honya` from your source's functions, not while the module loads: the 
 
 ```ts
 const response = await Honya.request({
-  url: "/api/search",          // absolute, or relative to baseUrl
+  url: "/api/search",          // absolute (http or https), or relative to baseUrl
   method: "POST",              // default GET
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ q: "frieren" }),
